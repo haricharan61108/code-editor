@@ -8,14 +8,13 @@ import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
-// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
 const prisma = new PrismaClient();
 const redisClient = createClient();
-const SECRET_KEY = process.env.SECRET_KEY; // Get secret key from environment
-const PORT = process.env.PORT || 3000; // Get port from environment, default to 3000
+const SECRET_KEY = process.env.SECRET_KEY; 
+const PORT = process.env.PORT || 3000; 
 
 app.use(express.json());
 app.use(cors());
